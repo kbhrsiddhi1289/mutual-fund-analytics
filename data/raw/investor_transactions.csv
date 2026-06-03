@@ -1,0 +1,15 @@
+df = pd.read_csv("data/raw/investor_transactions.csv")
+
+df['transaction_type'] = df['transaction_type'].str.upper()
+
+valid_types = ['SIP', 'LUMPSUM', 'REDEMPTION']
+
+df = df[df['transaction_type'].isin(valid_types)]
+
+df = df[df['amount'] > 0]
+
+df['transaction_date'] = pd.to_datetime(df['transaction_date'])
+
+print(df['kyc_status'].unique())
+
+df.to_csv("data/processed/investor_transactions_cleaned.csv", index=False)

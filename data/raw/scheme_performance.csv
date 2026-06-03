@@ -1,0 +1,17 @@
+df = pd.read_csv("data/raw/scheme_performance.csv")
+
+return_columns = ['1yr_return', '3yr_return', '5yr_return']
+
+for col in return_columns:
+    df[col] = pd.to_numeric(df[col], errors='coerce')
+
+df['expense_ratio'] = pd.to_numeric(df['expense_ratio'], errors='coerce')
+
+anomalies = df[
+    (df['expense_ratio'] < 0.1) |
+    (df['expense_ratio'] > 2.5)
+]
+
+print(anomalies)
+
+df.to_csv("data/processed/scheme_performance_cleaned.csv", index=False)
