@@ -1,3 +1,7 @@
+"""
+Mutual Fund Analytics Capstone Project
+Bluestock Internship
+"""
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -30,7 +34,7 @@ risk_df = pd.DataFrame(
     columns=['amfi_code', 'VaR_95', 'CVaR_95']
 )
 
-print(risk_df.head())
+
 
 risk_df.to_csv(
     "reports/var_cvar_report.csv",
@@ -114,7 +118,7 @@ fund_df = pd.read_csv(
     "data/raw/03_aum_by_fund_house.csv"
 )
 
-print(fund_df.columns)
+
 
 aum_total = fund_df['aum_crore'].sum()
 

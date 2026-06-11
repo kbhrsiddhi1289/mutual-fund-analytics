@@ -1,3 +1,7 @@
+"""
+Mutual Fund Analytics Capstone Project
+Bluestock Internship
+"""
 from sqlalchemy import create_engine
 import pandas as pd
 

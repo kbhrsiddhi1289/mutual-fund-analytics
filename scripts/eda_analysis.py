@@ -1,3 +1,7 @@
+"""
+Mutual Fund Analytics Capstone Project
+Bluestock Internship
+"""
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -90,7 +94,7 @@ plt.show()
 
 investor_df = pd.read_csv("data/raw/08_investor_transactions.csv")
 
-print(investor_df.columns)
+
 
 # Age Group Distribution
 plt.figure(figsize=(8,8))
@@ -187,7 +191,7 @@ plt.show()
 
 portfolio_df = pd.read_csv("data/raw/09_portfolio_holdings.csv")
 
-print(portfolio_df.columns)
+
 
 # Aggregate sector weights
 sector_data = portfolio_df.groupby('sector')['weight_pct'].sum()
@@ -215,7 +219,7 @@ plt.show()
 
 category_df = pd.read_csv("data/raw/05_category_inflows.csv")
 
-print(category_df.columns)
+
 
 # Pivot for heatmap
 heatmap_data = category_df.pivot(

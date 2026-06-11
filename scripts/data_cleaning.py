@@ -1,3 +1,7 @@
+"""
+Mutual Fund Analytics Capstone Project
+Bluestock Internship
+"""
 import pandas as pd
 
 # -------------------------------
@@ -9,7 +13,7 @@ nav_df = pd.read_csv(
     on_bad_lines='skip'
 )
 
-print(nav_df.columns)
+
 # Convert date column
 nav_df['date'] = pd.to_datetime(nav_df['date'])
 
@@ -42,7 +46,6 @@ txn_df = pd.read_csv(
     "data/raw/08_investor_transactions.csv",
     on_bad_lines='skip'
 )
-print(txn_df.columns)
 # Standardize transaction types
 txn_df['transaction_type'] = (
     txn_df['transaction_type']
@@ -89,7 +92,6 @@ perf_df = pd.read_csv(
     on_bad_lines='skip'
 )
 
-print(perf_df.columns)
 # Convert return columns to numeric
 return_columns = [
     'return_1yr_pct',

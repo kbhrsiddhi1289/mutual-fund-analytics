@@ -1,3 +1,7 @@
+"""
+Mutual Fund Analytics Capstone Project
+Bluestock Internship
+"""
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,7 +16,7 @@ nav_df['date'] = pd.to_datetime(nav_df['date'])
 # Sort values
 nav_df = nav_df.sort_values(['amfi_code', 'date'])
 
-print(nav_df.head())
+
 
 
 # Daily Returns
